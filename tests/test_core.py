@@ -507,7 +507,7 @@ class TestCase(unittest.TestCase):
 
     def test_parse_requirement_invalid_name(self):
         with self.assertRaisesRegex(ValueError, 'Dependency could not be parsed:'):
-            pkg_utils.parse_requirement_lines(['git+https://github.com/opt/req1.git#egg=req-ui-r-ment'])
+            pkg_utils.parse_requirement_lines(['git+https://github.com/opt/req1.git#egg=req-ui-r-@ment'])
 
     def test_parse_requirement_with_editable_option(self):
         with self.assertRaisesRegex(ValueError, 'Editable option is not supported'):

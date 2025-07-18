@@ -369,7 +369,7 @@ def parse_requirement_line(line, include_uri=False, include_extras=True, include
     line = req.line
 
     # check that name is valid and we support all of the features needed to install the dependency
-    if not req.name or not re.match(r'^[a-zA-Z0-9_\.]+$', req.name):
+    if not req.name or not re.match(r'^[a-zA-Z0-9_\.-]+$', req.name):
         raise ValueError('Dependency could not be parsed: {}'.format(line))
 
     if line.startswith('-e ') or req.editable:
